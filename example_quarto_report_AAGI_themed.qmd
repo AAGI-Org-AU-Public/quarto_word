@@ -112,7 +112,6 @@ This {flextable} follows the AAGI style guidelines.
 
 ft <- flextable(head(airquality) |> 
                   mutate(`Month Name` = "May"))
-# ft <- theme_ft_aagi(ft)
 ft
 ```
 
