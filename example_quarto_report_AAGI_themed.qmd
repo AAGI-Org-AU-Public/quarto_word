@@ -1,5 +1,4 @@
 ---
-title: "XXXXXX-XXX Report"
 format:
   docx:
     reference-doc: AAGI_Word_Style_Template.docx
@@ -14,8 +13,11 @@ knitr:
     fig.path: figures/
 params:
   uni: CU
+  pri_bio: Your.Name
+  project_num: AAA####--###BBB
 bibliography: references.bib
-date: "2024-07-05"
+date: "`r Sys.Date()`"
+date-format: long
 ---
 
 ```{r}
@@ -29,10 +31,48 @@ if (params$uni == "CU") {
 }
 ```
 
+```{r}
+#| include: false
+#| label: email for project lead
+
+if (params$uni == "CU") {
+  email = paste(params$pri_bio, "@curtin.edu.au", sep = "")
+} else if (params$uni == "UA") {
+  email = paste(params$pri_bio, "@adelaide.edu.au", sep = "")
+} else {
+  email = paste(params$pri_bio, "@uq.edu.au")
+}
+```
+
+```{r}
+#| label: Project number
+#| include: false
+
+Pro_Num = params$project_num
+
+```
+
+```{r}
+#| label: title param
+#| include: false
+
+if (params$uni == "CU") {
+  university <- "Curtin University"
+} else if (params$uni == "UA") {
+  university <- "University of Adelaide"
+} else {
+  university <- "University of Queensland"
+}
+
+```
+
 ---
+title: "Analytics for the Australian Grains Industry - `r university` (AAGI-`r params$uni`)  \n Technical Report Series: 123"
+subtitle: "NGN - Guidance for spreading mouse bait to improve efficacy and maintain bait integrity  \n Report for `r Pro_Num`"
 author: 
-  - "Author: Dr Bunsen Honeydew"
-  - "Project Leads: `r Project_Lead`" 
+  - Adam Sparks
+  - "Email: `r email`"
+  - "Project Leads: `r Project_Lead`"
 ---
 
 ```{r}
@@ -57,11 +97,9 @@ set_flextable_defaults(
 
 # Some Text from George Box
 
->Science and Statistics
->Aspects of scientific method are discussed: In particular, its representation as a motivated iteration in which, in succession, practice confronts theory, and theory, practice. Rapid progress requires sufficient flexibility to profit from such confrontations, and the ability to devise parsimonious but effective models, to worry selectively about model inadequacies and to employ mathematics skillfully but appropriately. The development of statistical methods at Rothamsted Experimental Station by Sir Ronald Fisher is used to illustrate these themes.
+> Science and Statistics Aspects of scientific method are discussed: In particular, its representation as a motivated iteration in which, in succession, practice confronts theory, and theory, practice. Rapid progress requires sufficient flexibility to profit from such confrontations, and the ability to devise parsimonious but effective models, to worry selectively about model inadequacies and to employ mathematics skillfully but appropriately. The development of statistical methods at Rothamsted Experimental Station by Sir Ronald Fisher is used to illustrate these themes.
 
 [@Box1976]
-
 
 # A Table
 
@@ -72,8 +110,9 @@ This {flextable} follows the AAGI style guidelines.
 #| echo: false
 #| include: true
 
-ft <- flextable(head(airquality) |> mutate(`Month Name` = "May"))
-ft <- theme_ft_aagi(ft)
+ft <- flextable(head(airquality) |> 
+                  mutate(`Month Name` = "May"))
+# ft <- theme_ft_aagi(ft)
 ft
 ```
 
