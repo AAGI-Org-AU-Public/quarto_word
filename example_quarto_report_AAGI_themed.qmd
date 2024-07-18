@@ -36,7 +36,7 @@ if (params$uni == "CU") {
 #| label: email for project lead
 
 if (params$uni == "CU") {
-  email = paste(params$pri_bio, "@curtin.edu.au", sep = "")
+  email = "cbada@curtin.edu.au"
 } else if (params$uni == "UA") {
   email = paste(params$pri_bio, "@adelaide.edu.au", sep = "")
 } else {
