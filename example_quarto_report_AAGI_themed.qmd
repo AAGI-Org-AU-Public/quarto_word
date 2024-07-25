@@ -6,25 +6,6 @@ format:
     colorlinks: true
     fig-width: 7
     fig-height: 7
-  pdf:
-    toc: true
-    fig-width: 7
-    fig-height: 7
-    pdf-engine: xelatex
-    include-in-header: report.tex
-    mainfont: Proxima Nova
-    fontsize: 11pt
-    geometry: 
-      - top=2.54cm
-      - bottom=3cm
-      - left=1.91cm
-      - right=1.91cm
-      - includefoot
-    linkcolor: aagiblue
-    urlcolor: aagiblue
-    template-partials:
-      - title.tex
-    documentclass: scrartcl
 execute: 
   echo: false
 knitr:
@@ -56,7 +37,7 @@ if (params$uni == "CU") {
 #| label: email for project lead
 
 if (params$uni == "CU") {
-  email = paste(params$pri_bio, "@curtin.edu.au", sep = "")
+  email = "cbada@curtin.edu.au"
 } else if (params$uni == "UA") {
   email = paste(params$pri_bio, "@adelaide.edu.au", sep = "")
 } else {
@@ -180,7 +161,6 @@ This {flextable} follows the AAGI style guidelines.
 
 ft <- flextable(head(airquality) |> 
                   mutate(`Month Name` = "May"))
-# ft <- theme_ft_aagi(ft)
 ft
 ```
 
