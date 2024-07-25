@@ -6,6 +6,25 @@ format:
     colorlinks: true
     fig-width: 7
     fig-height: 7
+  pdf:
+    toc: true
+    fig-width: 7
+    fig-height: 7
+    pdf-engine: xelatex
+    include-in-header: report.tex
+    mainfont: Proxima Nova
+    fontsize: 11pt
+    geometry: 
+      - top=2.54cm
+      - bottom=3cm
+      - left=1.91cm
+      - right=1.91cm
+      - includefoot
+    linkcolor: aagiblue
+    urlcolor: aagiblue
+    template-partials:
+      - title.tex
+    documentclass: scrartcl
 execute: 
   echo: false
 knitr:
@@ -14,10 +33,11 @@ knitr:
 params:
   uni: CU
   pri_bio: Your.Name
-  project_num: AAA####--###BBB
+  project_num: AAA--BBB
 bibliography: references.bib
 date: "`r Sys.Date()`"
 date-format: long
+editor: visual
 ---
 
 ```{r}
@@ -50,6 +70,8 @@ if (params$uni == "CU") {
 
 Pro_Num = params$project_num
 
+knitr::opts_chunk$set(fig.path = "figures/", echo = FALSE)
+
 ```
 
 ```{r}
@@ -69,12 +91,54 @@ if (params$uni == "CU") {
 ---
 title: "Analytics for the Australian Grains Industry - `r university` (AAGI-`r params$uni`)  \n Technical Report Series: 123"
 subtitle: "NGN - Guidance for spreading mouse bait to improve efficacy and maintain bait integrity  \n Report for `r Pro_Num`"
-author: 
+author:
   - Adam Sparks
   - "Email: `r email`"
-  - "Project Leads: `r Project_Lead`"
+  - Project Leads: "`r Project_Lead`"
 ---
 
+```{=latex}
+%\begin{titlepage}
+
+%\thispagestyle{Title_page}
+
+%\vspace*{-2cm}
+
+%  \begin{center}
+%    \includegraphics[height=3cm]{assets/AAGI_logo.pdf}    
+%  \end{center}
+
+%  \vfill
+  
+%  \rule{\textwidth}{0.5pt}
+
+%  \begin{FlushRight}
+
+%    \Huge
+%    \textcolor{aagiteal}{\textbf{Analytics for the Australian Grains Industry 
+%      -\\ `r university` (AAGI-`r params$uni`)\\
+%      Technical Report Series: 123}}\\[6mm]
+      
+%    \Large
+%    {\textbf{Informative title for report}}\\
+%    \vspace{2mm}{\textbf{Report for `r Pro_Num`}}\\[5mm]
+
+%    \normalsize
+%    \textbf{Your Name}\\
+%    \vspace*{0.4cm}
+%    \textbf{Email:}\; \texttt{%
+%      \href{mailto:`r email`}%
+%      {`r email`}}\\[8mm]
+%    \textbf{Project Leads: `r Project_Lead`}\\[8mm]
+      
+%    \today
+%  \end{FlushRight}
+%  \rule{\textwidth}{0.5pt}
+  
+%  \vfill
+  
+%\end{titlepage}
+```
 ```{r}
 #| label: load
 #| message: false
@@ -102,6 +166,10 @@ set_flextable_defaults(
 [@Box1976]
 
 # A Table
+
+## Testing for heading 2
+
+### Test for heading 3
 
 This {flextable} follows the AAGI style guidelines.
 
