@@ -51,8 +51,6 @@ if (params$uni == "CU") {
 
 Pro_Num = params$project_num
 
-knitr::opts_chunk$set(fig.path = "figures/", echo = FALSE)
-
 ```
 
 ```{r}
@@ -78,48 +76,6 @@ author:
   - Project Leads: "`r Project_Lead`"
 ---
 
-```{=latex}
-%\begin{titlepage}
-
-%\thispagestyle{Title_page}
-
-%\vspace*{-2cm}
-
-%  \begin{center}
-%    \includegraphics[height=3cm]{assets/AAGI_logo.pdf}    
-%  \end{center}
-
-%  \vfill
-  
-%  \rule{\textwidth}{0.5pt}
-
-%  \begin{FlushRight}
-
-%    \Huge
-%    \textcolor{aagiteal}{\textbf{Analytics for the Australian Grains Industry 
-%      -\\ `r university` (AAGI-`r params$uni`)\\
-%      Technical Report Series: 123}}\\[6mm]
-      
-%    \Large
-%    {\textbf{Informative title for report}}\\
-%    \vspace{2mm}{\textbf{Report for `r Pro_Num`}}\\[5mm]
-
-%    \normalsize
-%    \textbf{Your Name}\\
-%    \vspace*{0.4cm}
-%    \textbf{Email:}\; \texttt{%
-%      \href{mailto:`r email`}%
-%      {`r email`}}\\[8mm]
-%    \textbf{Project Leads: `r Project_Lead`}\\[8mm]
-      
-%    \today
-%  \end{FlushRight}
-%  \rule{\textwidth}{0.5pt}
-  
-%  \vfill
-  
-%\end{titlepage}
-```
 ```{r}
 #| label: load
 #| message: false
