@@ -35,17 +35,38 @@ editor: visual
 
 if (params$uni == "CU") {
   Project_Lead = "Curtin University -- Prof Mark Gibberd, Dr Julia Easton, Prof Adam Sparks"
-  email = paste(params$pri_bio, "@curtin.edu.au", sep = "")
-  university <- "Curtin University"
 } else if (params$uni == "UA") {
   Project_Lead = "University of Adelaide -- Dr Julian Taylor, Dr Olena Kravchuck"
-  email = paste(params$pri_bio, "@adelaide.edu.au", sep = "")
-  university <- "University of Adelaide"
 } else {
   Project_Lead = "University of Queensland -- Prof Scott Chapman, Emeritus Prof Kaye Basford"
+}
+```
+
+```{r}
+#| include: false
+#| label: email for project lead
+
+if (params$uni == "CU") {
+  email = "cbada@curtin.edu.au"
+} else if (params$uni == "UA") {
+  email = paste(params$pri_bio, "@adelaide.edu.au", sep = "")
+} else {
   email = paste(params$pri_bio, "@uq.edu.au")
+}
+```
+
+```{r}
+#| label: title param
+#| include: false
+
+if (params$uni == "CU") {
+  university <- "Curtin University"
+} else if (params$uni == "UA") {
+  university <- "University of Adelaide"
+} else {
   university <- "University of Queensland"
 }
+
 ```
 
 ```{r}
@@ -53,7 +74,6 @@ if (params$uni == "CU") {
 #| include: false
 
 Pro_Num = params$project_num
-
 ```
 
 ```{=latex}
