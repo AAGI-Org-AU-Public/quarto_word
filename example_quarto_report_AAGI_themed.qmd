@@ -81,7 +81,7 @@ author:
 #| message: false
 
 library(ggplot2)
-library(theme.aagi)
+library(AAGIThemes)
 library(flextable)
 library(dplyr)
 

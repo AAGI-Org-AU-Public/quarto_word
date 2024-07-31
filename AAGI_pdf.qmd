@@ -123,7 +123,7 @@ Pro_Num = params$project_num
 #| message: false
 
 library(ggplot2)
-library(theme.aagi)
+library(AAGIThemes)
 library(flextable)
 library(dplyr)
 
