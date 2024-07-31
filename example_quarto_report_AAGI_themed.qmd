@@ -73,7 +73,7 @@ subtitle: "Descriptive title for report  \n Report for `r Pro_Num`"
 author:
   - Adam Sparks
   - "Email: `r email`"
-  - Project Leads: "`r Project_Lead`"
+  - "Project Leads: `r Project_Lead`"
 ---
 
 ```{r}
