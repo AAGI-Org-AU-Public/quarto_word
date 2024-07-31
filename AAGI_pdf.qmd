@@ -141,47 +141,65 @@ theme_set(theme_aagi())
 
 \newpage
 
-# Some Text from George Box
+# Executive summary
 
-> Science and Statistics Aspects of scientific method are discussed: In particular, its representation as a motivated iteration in which, in succession, practice confronts theory, and theory, practice. Rapid progress requires sufficient flexibility to profit from such confrontations, and the ability to devise parsimonious but effective models, to worry selectively about model inadequacies and to employ mathematics skillfully but appropriately. The development of statistical methods at Rothamsted Experimental Station by Sir Ronald Fisher is used to illustrate these themes.
+What was provided by AAGI and the main results?
 
-[@Box1976]
+# Introduction
 
-@Box1976
+-   Goals of the research project.
 
-# A Table
+-   Background, context and rationale behind the research.
 
-## Testing for subsection
+# Experimental/Trial Design
 
-### Testing for subsubsection
+-   Trial design type and layout.
 
-This {flextable} follows the AAGI style guidelines.
+-   Treatments, number of replicates.
 
-```{r}
-#| label: example-table
-#| echo: false
-#| include: true
+-   Specific considerations for small plots, glasshouse, genetics, breeding trials, OFE projects, or bioinformatics.
 
-ft <- flextable(head(airquality) |>
-                  mutate(`Month Name` = "May")) |>
-  theme_ft_aagi()
-ft
-```
+# Exploratory Data Analysis and Data Visualisation
 
-\newpage
+-   Interpretation of plots and data.
 
-# A Histogram
+-   Rationale behind specific methods used.
 
-The AAGI theme is automatically applied here as well.
+# Methods
 
-```{r}
-#| label: example-histogram
+-   Detailed description of the procedures and methodologies used.
 
-ggplot(diamonds, aes(carat)) + 
-  geom_histogram()
-```
+-   Include versions/commits on developed pipelines, scripts, and input/output details if applicable.
+
+# Analysis (if separate from Methods)
+
+Approach taken for data analysis.
+
+# Results and Discussion
+
+Findings and their implications.
+
+# Metadata and Datasets (Optional)
+
+-   md5sums for input data and outputs (if applicable).
+
+-   Git commit numbers and tags.
+
+-   Location of outputs (FAIR Data).
+
+-   DOI for AAGI outputs.
+
+# Map (Location, Optional)
+
+Include if relevant to the project.
 
 # References
 
+Cited works and literature. @Box1976
+
 ::: {#refs}
 :::
+
+# Appendix (Optional)
+
+Additional supporting information.
